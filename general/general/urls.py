@@ -10,10 +10,6 @@ urlpatterns = [
     path('about/', include('main.urls')),
     path('services/', include('main.urls')),
 ]
-urlpatterns = [
-    path('admin/', admin.site.urls),
-    path('', include('main.urls')),  # Подключение приложения main
-]
 
 # Подключение статических файлов только в режиме DEBUG
 if settings.DEBUG:

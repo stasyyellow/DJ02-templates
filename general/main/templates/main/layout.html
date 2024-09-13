@@ -1,3 +1,5 @@
+{% load static %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -25,11 +27,12 @@
             <aside class="col-md-3 text-center">
                 <img src="{% static 'main/img/cat.png' %}" alt="котик на двух лапках" class="img-fluid rounded mb-3" style="max-width: 150px;">
                 <span>DjangoCatProject</span>
-                <ul></ul>
+                <ul>
                     <li><a class="nav-link" href="{% url 'index' %}">Главная</a></li>
                     <li><a class="nav-link" href="{% url 'about' %}">О нас</a></li>
                     <li><a class="nav-link" href="{% url 'contact' %}">Контакты</a></li>
                     <li><a class="nav-link" href="{% url 'services' %}">Услуги</a></li>
+                </ul>
 
             </aside>
 
@@ -54,3 +57,4 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
+
