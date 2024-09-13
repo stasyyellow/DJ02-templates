@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }}</title>
+
+    <!-- Подключение пользовательского CSS -->
+    <link rel="stylesheet" href="{% static 'main/css/main.css' %}">
+
+    <!-- Подключение Bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-light">
+
+    <!-- Включение навигации -->
+    <header>
+        {% include 'main/nav.html' %}
+    </header>
+
+    <!-- Контейнер для содержимого страницы -->
+    <div class="container mt-5">
+        <div class="row">
+            <!-- Боковая колонка с изображением -->
+            <aside class="col-md-3 text-center">
+                <img src="{% static 'main/img/cat.png' %}" alt="котик на двух лапках" class="img-fluid rounded mb-3" style="max-width: 150px;">
+                <span>DjangoCatProject</span>
+                <ul></ul>
+                    <li><a class="nav-link" href="{% url 'index' %}">Главная</a></li>
+                    <li><a class="nav-link" href="{% url 'about' %}">О нас</a></li>
+                    <li><a class="nav-link" href="{% url 'contact' %}">Контакты</a></li>
+                    <li><a class="nav-link" href="{% url 'services' %}">Услуги</a></li>
+
+            </aside>
+
+            <!-- Основной контент -->
+            <main class="col-md-9">
+                <div class="content-wrapper p-4 bg-white shadow-sm rounded">
+                    {% block content %}{% endblock %}
+                </div>
+            </main>
+        </div>
+    </div>
+
+    <!-- Включение подвала -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            {% include 'main/footer.html' %}
+        </div>
+    </footer>
+
+    <!-- Подключение Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
